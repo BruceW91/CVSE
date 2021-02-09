@@ -9,10 +9,7 @@ from model_CVSE import CVSE
 
 '''1) Evaluate COCO'''
 parser = argparse.ArgumentParser(description='CVSE evaluate')
-
-# parser.add_argument('--data_path', default='./Bottom_up_atten_feature/data', help='path to dataset ')
-parser.add_argument('--data_path', default='G:/StudyFile/School-Server-Code/image-text-matching/SCAN_feature_data/Bottom_up_atten_feature/data', help='path to dataset ')
-
+parser.add_argument('--data_path', default='./Bottom_up_atten_feature/data', help='path to dataset ')
 parser.add_argument('--data_name', default='coco_precomp', help='{coco,f30k}_precomp')
 parser.add_argument('--concept_name', default='data/coco_annotations/Concept_annotations/category_concepts.json',
                         help='load the input concrete words of concepts')
@@ -26,11 +23,7 @@ parser.add_argument('--fold5', action='store_false', help='Choose to evaluate on
 
 '''2) Evaluate f30k'''
 # parser = argparse.ArgumentParser(description='CVSE evaluate')
-#
 # # parser.add_argument('--data_path', default='./Bottom_up_atten_feature/data', help='path to dataset ')
-# parser.add_argument('--data_path', default='G:/StudyFile/School-Server-Code/image-text-matching/SCAN_feature_data/Bottom_up_atten_feature/data', help='path to dataset ')
-#
-#
 # parser.add_argument('--data_name', default='f30k_precomp',   help='{coco,f30k}_precomp')
 # parser.add_argument('--concept_name', default='data/f30k_annotations/Concept_annotations/category_concepts.json',
 #                         help='load the input concrete words of concepts')
@@ -39,7 +32,7 @@ parser.add_argument('--fold5', action='store_false', help='Choose to evaluate on
 # parser.add_argument('--data_name_vocab', default='f30k_precomp',   help='{coco,f30k}_precomp')
 # parser.add_argument('--transfer_test', action='store_true', help='Whether to perform cross-dataset testing.')
 # parser.add_argument('--split', default='test', help='Evaluate on f30k 1k test set. ')
-# parser.add_argument('--fold5', action='store_true', help='Choose to evaluate on coco 5fold 1k test set or 5k test set')
+# parser.add_argument('--fold5', action='store_true', help='Choose to evaluate on f30k 1k test set')
 
 
 '''3) Evaluate coco-to-f30k transfer'''
