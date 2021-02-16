@@ -9,7 +9,7 @@ Image-text matching plays a central role in bridging vision and language. Most e
 
 <img src="./figures/framework_CVSE.jpg" width = "60%" height="50%">
 
-**The results on MSCOCO and Flicke30K dataset: (The inference code has been revised for fair comparison)** 
+**The results on MSCOCO and Flicke30K dataset: (The inference/evaluation code has been corrected for fair comparision)** 
 <table>
   <tr>
     <td></td>
