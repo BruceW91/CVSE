@@ -9,7 +9,7 @@ Image-text matching plays a central role in bridging vision and language. Most e
 
 <img src="./figures/framework_CVSE.jpg" width = "60%" height="50%">
 
-**The results on MSCOCO and Flicke30K dataset:**
+**The results on MSCOCO and Flicke30K dataset: (The inference code has been revised for fair comparison)** 
 <table>
   <tr>
     <td></td>
@@ -29,23 +29,23 @@ Image-text matching plays a central role in bridging vision and language. Most e
   </tr>
   <tr>
     <td>MSCOCO</td>
-    <td>78.6</td>
-    <td>95.0</td>
-    <td>97.5</td>
-    <td>66.3</td>
-    <td>91.8</td>
-    <td>96.3</td>
-     <td>87.6</td>
+    <td>74.8</td>
+    <td>95.1</td>
+    <td>98.3</td>
+    <td>59.9</td>
+    <td>89.4</td>
+    <td>95.2</td>
+     <td>85.5</td>
   </tr>
   <tr>  
     <td>Flickr30k</td>
-    <td>73.6</td>
-    <td>90.4</td>
-    <td>94.4</td>
-    <td>56.1</td>
-    <td>83.2</td>
-    <td>90.0</td>
-    <td>81.3</td>
+    <td>73.5</td>
+    <td>92.1</td>
+    <td>95.8</td>
+    <td>52.9</td>
+    <td>80.4</td>
+    <td>87.8</td>
+    <td>80.4</td>
   </tr>
 </table>
 
