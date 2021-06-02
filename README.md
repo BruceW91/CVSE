@@ -61,8 +61,8 @@ We recommended the following dependencies.
 ## Download data
 Download the dataset files. We use the image feature created by SCAN, downloaded [here](https://github.com/kuanghuei/SCAN). All the data needed for reproducing the experiments in the paper, including image features and vocabularies, can be downloaded from:
 ```bash
-wget https://scanproject.blob.core.windows.net/scan-data/data.zip
-wget https://scanproject.blob.core.windows.net/scan-data/vocab.zip
+wget https://iudata.blob.core.windows.net/scan/data.zip
+wget https://iudata.blob.core.windows.net/scan/vocab.zip
 ```
 In this implementation, we refer to the path of extracted files for `data.zip` as `$data_path` and files for `vocab.zip` to `./vocab_path` directory.
 
