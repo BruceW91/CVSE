@@ -81,18 +81,18 @@ def main():
     parser.add_argument('--measure', default='cosine',
                         help='Similarity measure used (cosine|order)')
     parser.add_argument('--attribute_path',
-                        default='data/f30k_annotations/Concept_annotations/',
+                        default='data/f30k_annotations/Concept_annotations_f30k/',
                         help='path to get attribute json file')  # absolute path (get from path of SAN model)
     parser.add_argument('--num_attribute', default=300, type=int, help='dimension of Attribute annotation')
     parser.add_argument('--input_channel', default=300, type=int, help='dimension of initial word embedding')
-    parser.add_argument('--inp_name', default='data/f30k_annotations/Concept_annotations/f30k_concepts_glove_word2vec.pkl',
+    parser.add_argument('--inp_name', default='data/f30k_annotations/Concept_annotations_f30k/f30k_concepts_glove_word2vec.pkl',
                         help='load the input glove word embedding file')
-    parser.add_argument('--adj_file', default='data/f30k_annotations/Concept_annotations/f30k_adj_concepts.pkl', help='load the adj file')
+    parser.add_argument('--adj_file', default='data/f30k_annotations/Concept_annotations_f30k/f30k_adj_concepts.pkl', help='load the adj file')
     parser.add_argument('--learning_rate_MLGCN', default=.0002, type=float, help='learning rate of module of MLGCN.')
     parser.add_argument('--lr_MLGCN_update', default=10, type=int,
                         help='Number of epochs to update the learning rate.')
     parser.add_argument('--Concept_label_ratio', default=0.35, type=float, help='The ratio of concept label.')
-    parser.add_argument('--concept_name', default='data/f30k_annotations/Concept_annotations/category_concepts.json',
+    parser.add_argument('--concept_name', default='data/f30k_annotations/Concept_annotations_f30k/category_concepts.json',
                         help='load the input concrete words of concepts')
     parser.add_argument('--norm_func_type', default='sigmoid', help='choose type of norm functions.')
     parser.add_argument('--feature_fuse_type', default='weight_sum',
