@@ -423,7 +423,6 @@ def calculate_sim(img_emb, cap_emb):
         mat_sim_2[index] = sim_line
     return mat_sim_2
 
-
 def construct_N_with_KNN(mat_sim_inst, K_neigs=3, return_index=True):
 
     order_t2i = np.argsort(-mat_sim_inst, 0)
@@ -435,17 +434,19 @@ def construct_N_with_KNN(mat_sim_inst, K_neigs=3, return_index=True):
         ind_nearest_t2i = order_t2i[0, i]
         cand_nearest_i2t = order_i2t[ind_nearest_t2i]
         index_i_txt = np.where(cand_nearest_i2t == i); index_i_txt = index_i_txt[0][0]
-        if index_i_txt - interval <= 0:
-            index_N_neighbours[i] = cand_nearest_i2t[:K_neigs]
-        elif K_neigs == 3:
-            index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-1:index_i_txt+2]   
-        elif K_neigs != 3 and K_neigs % 2 == 0:
-            index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-interval:index_i_txt+interval]    
+        if index_i_txt < cand_nearest_i2t.shape[0] - K_neigs:
+            if K_neigs == 3 and index_i_txt>1:  
+                index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-1:index_i_txt+2]   
+            # elif K_neigs != 3 and K_neigs % 2 == 0:
+            elif K_neigs > 3 and K_neigs % 2 == 0:
+                index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-interval:index_i_txt+interval]    
+            elif K_neigs > 3 and K_neigs % 2 != 0:
+                index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-interval-1:index_i_txt+interval]   
+            else:
+                index_N_neighbours[i] = cand_nearest_i2t[:K_neigs] 
         else:
-            index_N_neighbours[i] = cand_nearest_i2t[index_i_txt-interval-1:index_i_txt+interval]   
-
+            index_N_neighbours[i] = cand_nearest_i2t[-K_neigs:] 
     return index_N_neighbours
-
 
 def label_complete(concept_label, img_embs, cap_embs, data_name):
     cap_embs = torch.Tensor(cap_embs)       
